@@ -178,14 +178,14 @@
     <div class="boxContent  d-none d-lg-block">
         <div class="left" id="left" @click="loadAndJump()">
             <div>
-                <div class="circlePercentage1">
-                    <div class="percentageText1">
+                <div class="circlePercentagen">
+                    <div class="percentageTextn">
                         <span style="font-weight: 600; font-size: 40px"> 100% </span>
                         <span style="font-size: 15px"> ingredients used </span>
                     </div>
                 </div>
-                <span class="recipeTitle1">{{this.recipeList['recipe1']['name']}}</span>
-                <div class="bottomText1">
+                <span class="recipeTitlen">{{this.recipeList['recipe1']['name']}}</span>
+                <div class="bottomTextn">
                     <span> {{this.recipeList['recipe1']['difficulty']}} </span>
                     <br />
                     <span> {{this.recipeList['recipe1']['cost']}} </span>

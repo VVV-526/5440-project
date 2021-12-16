@@ -616,7 +616,7 @@ export default {
 }
 .topBar_filter {
     background-color: #adc965;
-    margin-top: 2vh;
+    margin-top: 0vh;
     border-radius: 10px;
     height: 25vh;
     padding: 0;

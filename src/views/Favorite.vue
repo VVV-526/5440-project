@@ -1,23 +1,24 @@
 <template>
 <div class="container-fluid1">
-    <div class="topBar2">
+    <div class="topBar3">
         <br />
         <br />
-        <button class="return2" @click="$router.go(-1)">
+        <button class="return3" @click="$router.go(-1)">
             <b-icon icon="arrow-left" scale="2.5"></b-icon>
         </button>
-        <div>
-            <div class="titleText2">My Favorites</div>
+        <div class="titleText3">
+             <b-icon icon="bookmark-heart-fill" ></b-icon>
+            <span> My Favorites</span>
         </div>
         <br />
     </div>
-    <div class="boxContent2">
-        <div class="right2">
-            <div class="upperRight2" @click="loadAndJump()">
-                <div class="ubox2">
-                    <b-icon icon="heart-fill" class="favoriteIcon2"></b-icon>
-                    <span class="recipeTitle2">Garlic Pork Chops</span>
-                    <div class="bottomText2">
+    <div class="boxContent3">
+        <div class="right3">
+            <div class="upperRight3" @click="loadAndJump()">
+                <div class="ubox3">
+                    <b-icon icon="heart-fill" class="favoriteIcon3"></b-icon>
+                    <span class="recipeTitle3">Garlic Pork Chops</span>
+                    <div class="bottomText3">
                         <span> Easy </span>
                         <br />
                         <span> ~20$ </span>
@@ -28,10 +29,10 @@
                     </div>
                 </div>
 
-                <div class="ubox2">
-                    <b-icon icon="heart-fill" class="favoriteIcon2"></b-icon>
-                    <span class="recipeTitle2">Honey Garlic Pork Chops</span>
-                    <div class="bottomText2">
+                <div class="ubox3">
+                    <b-icon icon="heart-fill" class="favoriteIcon3"></b-icon>
+                    <span class="recipeTitle3">Honey Garlic Pork Chops</span>
+                    <div class="bottomText3">
                         <span> Easy </span>
                         <br />
                         <span> ~15$ </span>
@@ -43,12 +44,12 @@
                 </div>
             </div>
 
-            <div class="bottomRight2">
+            <div class="bottomRight3">
 
-                <div class="dbox2">
-                    <b-icon icon="heart-fill" class="favoriteIcon2"></b-icon>
-                    <span class="recipeTitle2">Sweet & Sour Fillet</span>
-                    <div class="bottomText2">
+                <div class="dbox3">
+                    <b-icon icon="heart-fill" class="favoriteIcon3"></b-icon>
+                    <span class="recipeTitle3">Sweet & Sour Fillet</span>
+                    <div class="bottomText3">
                         <span> Easy </span>
                         <br />
                         <span> ~15$ </span>
@@ -59,10 +60,10 @@
                     </div>
                 </div>
 
-                <div class="dbox2">
-                    <b-icon icon="heart-fill" class="favoriteIcon2"></b-icon>
-                    <span class="recipeTitle2">Char Siu (BBQ Pork)</span>
-                    <div class="bottomText2">
+                <div class="dbox3">
+                    <b-icon icon="heart-fill" class="favoriteIcon3"></b-icon>
+                    <span class="recipeTitle3">Char Siu (BBQ Pork)</span>
+                    <div class="bottomText3">
                         <span> Medium </span>
                         <br />
                         <span> ~20$ </span>
@@ -108,7 +109,7 @@ export default {
     margin-left: auto;
     height: 100%;
 }
-.topBar2 {
+.topBar3 {
     background-color: #adc965;
     margin-top: 2vh;
     border-radius: 10px;
@@ -116,20 +117,20 @@ export default {
     padding: 0;
     width: 100%;
 }
-.titleText2 {
-    font-size: 15px;
+.titleText3 {
+    font-size: 25px;
     color: rgb(255, 255, 255);
     font-weight: 600;
     font-family: system-ui;
     text-shadow: gray;
 }
-.topIcon2 {
+.topIcon3 {
     position: fixed;
     top: 9vh;
     left: 8%;
     color: white;
 }
-.return2 {
+.return3 {
     position: absolute;
     top: 2vh;
     left: 25px;
@@ -140,34 +141,34 @@ export default {
     background-color: #adc965;
     border-radius: 5px;
 }
-.returnButton2:hover {
+.return3:hover {
     background-color: #e4dadae5;
     color: white;
 }
-.box2 {
+.box3 {
     padding-bottom: 50px;
 }
-.boxContent2 {
+.boxContent3 {
     display: flex;
 }
-.right2 {
+.right3 {
     display: flex;
     flex-direction: column;
     flex: 4;
 }
-.upperRight2 {
+.upperRight3 {
     display: flex;
     flex-direction: row;
     flex: 4;
     margin-top: 10px;
 }
-.bottomRight2 {
+.bottomRight3 {
     display: flex;
     flex-direction: row;
     flex: 4;
     margin-top: 10px;
 }
-.ubox2:nth-child(1) {
+.ubox3:nth-child(1) {
     width: 50%;
     border-radius: 5px;
     overflow: hidden;
@@ -176,7 +177,7 @@ export default {
     background-size: cover;
     background-position: center;
 }
-.ubox2:nth-child(2) {
+.ubox3:nth-child(2) {
     width: 50%;
     margin-left: 15px;
     border-radius: 5px;
@@ -186,7 +187,7 @@ export default {
     background-size: cover;
     background-position: center;
 }
-.dbox2:nth-child(1) {
+.dbox3:nth-child(1) {
     width: 50%;
     border-radius: 5px;
     overflow: hidden;
@@ -195,7 +196,7 @@ export default {
     background-size: cover;
     background-position: center;
 }
-.dbox2:nth-child(2) {
+.dbox3:nth-child(2) {
     width: 50%;
     margin-left: 15px;
     border-radius: 5px;
@@ -205,19 +206,19 @@ export default {
     background-size: cover;
     background-position: center;
 }
-div.ubox2:hover {
+div.ubox3:hover {
     box-shadow: 2px 3px 3px 2px rgba(70, 70, 70, 0.2);
     cursor: pointer;
     transform: scaleX(1.009);
     transition: 0.1s;
 }
-div.dbox2:hover {
+div.dbox3:hover {
     box-shadow: 2px 3px 3px 2px rgba(70, 70, 70, 0.2);
     cursor: pointer;
     transform: scaleX(1.009);
     transition: 0.1s;
 }
-.favoriteIcon2 {
+.favoriteIcon3 {
     font-size: 30px;
     font-weight: 600;
     margin-top: 5px;
@@ -225,7 +226,7 @@ div.dbox2:hover {
     float: left;
     color: #adc965;
 }
-.recipeTitle2 {
+.recipeTitle3 {
     font-size: 20px;
     font-weight: 600;
     color: white;
@@ -236,7 +237,7 @@ div.dbox2:hover {
     text-shadow: 1px 1px #a0a0a0;
     bottom: 0;
 }
-.bottomText2 {
+.bottomText3 {
     font-size: 15px;
     color: white;
     position: relative;

@@ -1,233 +1,6 @@
 <template>
 <div class="container-fluid-filter">
-    <div class="row flex-xl-nowrap2 d-lg-none">
-            <div class="content_filter">
-                <div class="topBar_filter2">
-                    <button class="myFav2" @click="$router.push('/favorite')">
-                        <b-icon icon="forward-fill" font-scale="1"></b-icon>My Favorites
-                        <b-icon icon="heart-fill" scale="1"></b-icon>
-                    </button>
-                    <br><br>
-                    <span class="topText2">Choose the ingredients you want to use</span>
-                    <b-row align-self="center">
-                        <b-col>
-                            <input class="searchBar2" placeholder="Search for recipe...." v-model="inputTags" clearable />
-                            <button class="searchButton2" @click="loadAndJump">GO</button>
-                        </b-col>
-                    </b-row>
-                </div>
-                <div class="blocks">
-                    <div class="cardContainer">
-                        
-                        <b-row>
-                            <b-card class="selectedBox2">
-                                <div class="selectedTitle">Use it again</div>
-                                <div class="selectedLine2"></div>
-                                <button class="lastTags" style="margin-top:40px" id="u1" @click="changeClass('u1')" value="Pork">Pork</button>
-                                <button class="lastTags" style="margin-left: 15px" id="u2" @click="changeClass('u2')" value="Rice">Rice</button>
-                                <button class="lastTags" style="margin-left: 15px" id="u3" @click="changeClass('u3')" value="Egg">Egg</button>
-                                <button class="lastTags" style="margin-left: 15px" id="u4" @click="changeClass('u4')" value="Buttermilk">Buttermilk</button>
-                                <button class="lastTags" style="margin-left: 15px" id="u5" @click="changeClass('u5')" value="Garlic">Garlic</button>
-                                <button class="lastTags" style="margin-left: 15px" id="u6" @click="changeClass('u6')" value="Scallion">Scallion</button>
-                            </b-card>
-                        </b-row>
-
-                        <b-row id="r2">
-                            
-                            <b-card class="selectedBox2">
-                                <div class="selectedTitle">Preference</div>
-                                <div class="selectedLine2"></div>
-                                <b-form-group style="margin-top:40px" v-slot="{ ariaDescribedby }">
-                                    <b-form-radio class="preference" v-model="preference" :aria-describedby="ariaDescribedby" name="some-radios" value="Time"><span style="margin-left:5px;">Time</span></b-form-radio>
-                                    <b-form-radio class="preference" v-model="preference" :aria-describedby="ariaDescribedby" name="some-radios" value="Cost"><span style="margin-left:5px;">Cost</span></b-form-radio>
-                                    <b-form-radio class="preference" v-model="preference" :aria-describedby="ariaDescribedby" name="some-radios" value="Nutrition"><span style="margin-left:5px;">Difficulty</span></b-form-radio>
-                                    <b-form-radio class="preference" v-model="preference" :aria-describedby="ariaDescribedby" name="some-radios" value="None"><span style="margin-left:5px;">None</span></b-form-radio>
-                                </b-form-group>
-                            </b-card>
-                        </b-row>
-
-                        <b-row>
-                            <b-card class="ingredientBox1_2">
-                                <div class="circlePicture1"></div>
-                                <div class="cardTitle">Vegetable</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="v1" @click="changeClass('v1')" value="Tomato">Tomato</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v2" @click="changeClass('v2')" value="Potato">Potato</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v3" @click="changeClass('v3')" value="Chili">Chili</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v4" @click="changeClass('v4')" value="Broccoli">Broccoli</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v5" @click="changeClass('v5')" value="Onion">Onion</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v6" @click="changeClass('v6')" value="Eggplant">Eggplant</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v7" @click="changeClass('v7')" value="Asparagus">Asparagus</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v8" @click="changeClass('v8')" value="Corn">Corn</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v9" @click="changeClass('v9')" value="Bok Choy">Bok Choy</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v10" @click="changeClass('v10')" value="Spinach">Spinach</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v11" @click="changeClass('v11')" value="Carrot">Carrot</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v12" @click="changeClass('v12')" value="Cabbage">Cabbage</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v13" @click="changeClass('v13')" value="Ginger">Ginger</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v14" @click="changeClass('v14')" value="Leeks">Leeks</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="v15" @click="changeClass('v15')" value="Beans">Beans</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v16" @click="changeClass('v16')" value="Squash">Squash</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="v17" @click="changeClass('v17')" value="Pumpkin">Pumpkin</button>
-                            </b-card>
-                        </b-row>
-                        <b-row>
-                            <b-card class="ingredientBox2_2">
-                                <div class="circlePicture2"></div>
-                                <div class="cardTitle">Meat & Seafood</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="m1" @click="changeClass('m1')" value="Chicken">Chicken</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m2" @click="changeClass('m2')" value="Beef">Beef</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m3" @click="changeClass('m3')" value="Bacon">Bacon</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m4" @click="changeClass('m4')" value="Salmon">Salmon</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m5" @click="changeClass('m5')" value="Ham">Ham</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m6" @click="changeClass('m6')" value="Sausage">Sausage</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m7" @click="changeClass('m7')" value="Pork">Pork</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m8" @click="changeClass('m8')" value="Duck">Duck</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m9" @click="changeClass('m9')" value="Turkey">Turkey</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m10" @click="changeClass('m10')" value="Lamb">Lamb</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m11" @click="changeClass('m11')" value="Spam">Spam</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m12" @click="changeClass('m12')" value="Steak">Steak</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m13" @click="changeClass('m13')" value="Scallops">Scallops</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m14" @click="changeClass('m14')" value="Oyster">Oyster</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m15" @click="changeClass('m15')" value="Cod">Cod</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m16" @click="changeClass('m16')" value="Crab">Crab</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m17" @click="changeClass('m17')" value="Chicken Thighs">Chicken Thighs</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="m18" @click="changeClass('m18')" value="Chichken Wings">Chichken Wings</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m19" @click="changeClass('m19')" value="Mussels">Mussels</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="m20" @click="changeClass('m20')" value="Lobster">Lobster</button>
-                            </b-card>
-                        </b-row>
-                        <b-row>
-                            <b-card class="ingredientBox1_2">
-                                <div class="circlePicture3"></div>
-                                <div class="cardTitle">Fruit</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="f1" @click="changeClass('f1')" value="Apple">Apple</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f2" @click="changeClass('f2')" value="Banana">Banana</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f3" @click="changeClass('f3')" value="Cherry">Cherry</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f4" @click="changeClass('f4')" value="Peach">Peach</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f6" @click="changeClass('f6')" value="Kiwi">Kiwi</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f7" @click="changeClass('f7')" value="Orange">Orange</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f8" @click="changeClass('f8')" value="Watermelon">Watermelon</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f9" @click="changeClass('f9')" valule="Mango">Mango</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f10" @click="changeClass('f10')" value="Strawberry">Strawberry</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f11" @click="changeClass('f11')" value="Coconut">Coconut</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f12" @click="changeClass('f12')" value="Lime">Lime</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f13" @click="changeClass('f13')" value="Lemon">Lemon</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f14" @click="changeClass('f14')" value="Pineapple">Pineapple</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="f15" @click="changeClass('f15')" value="Blueberry">Blueberry</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f16" @click="changeClass('f16')" value="Raspberry">Raspberry</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f5" @click="changeClass('f5')" value="Pear">Pear</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f17" @click="changeClass('f17')" value="Grape">Grape</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="f18" @click="changeClass('f18')" value="Dragon Fruit">Dragon Fruit</button>
-                            </b-card>
-                        </b-row>
-                        <b-row>
-                            <b-card class="ingredientBox2_2">
-                                <div class="circlePicture4"></div>
-                                <div class="cardTitle">Dairy & Eggs</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="d1" @click="changeClass('d1')">Butter</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d2" @click="changeClass('d2')">Egg</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d3" @click="changeClass('d3')">Cream</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d4" @click="changeClass('d4')">Milk</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d7" @click="changeClass('d7')">Whey</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d6" @click="changeClass('d6')">Curd</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="d8" @click="changeClass('d8')">Ghee</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="d9" @click="changeClass('d9')">Ice Cream</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d15" @click="changeClass('d15')">Buttermilk</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d10" @click="changeClass('d10')">Half and Half</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d11" @click="changeClass('d11')">Heavy Cream</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="d5" @click="changeClass('d5')">Yogurt</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d12" @click="changeClass('d12')">Sour Cream</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="d13" @click="changeClass('d13')">Milk Powder</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="d14" @click="changeClass('d14')">Frosting</button>
-                            </b-card>
-                        </b-row>
-                        <b-row>
-                            <b-card class="ingredientBox1_2">
-                                <div class="circlePicture5"></div>
-                                <div class="cardTitle">Oils</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="o1" @click="changeClass('o1')" value="Olive Oil">Olive Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="o2" @click="changeClass('o2')" value="Sesame Oil">Sesame Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="o3" @click="changeClass('o3')" value="Canola Oil">Canola Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="o4" @click="changeClass('o4')" value="Peanut Oil">Peanut Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="o5" @click="changeClass('o5')" value="Vegetable Oil">Vegetable Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="o6" @click="changeClass('o6')" value="Coconut Oil">Coconut Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="o7" @click="changeClass('o7')" value="Sunflower Oil">Sunflower Oil</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="o8" @click="changeClass('o8')" value="Cron Oil">Corn Oil</button>
-                            </b-card>
-                        </b-row>
-                    
-
-
-                        <b-row>
-                            <b-card class="ingredientBox1_2">
-                                <div class="circlePicture7"></div>
-                                <div class="cardTitle">Cheese</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="c1" @click="changeClass('c1')" value="Parmesan">Parmesan</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c2" @click="changeClass('c2')" value="Cheddar">Cheddar</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c3" @click="changeClass('c3')" value="Feda">Feta</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c4" @click="changeClass('c4')" value="Ricotta">Ricotta</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c5" @click="changeClass('c5')" value="Mozzarella">Mozzarella</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c6" @click="changeClass('c6')" value="Goat Cheese">Goat Cheese</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c7" @click="changeClass('c7')" value="Gruyere">Gruyere</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c8" @click="changeClass('c8')" value="Swiss Cheese">Swiss Cheese</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c9" @click="changeClass('c9')" value="Blue Cheese">Blue Cheese</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="c10" @click="changeClass('c10')" value="Brie">Brie</button>
-                            </b-card>
-                        </b-row>
-
-                         <b-row>
-                            <b-card class="ingredientBox2_2">
-                                <div class="circlePicture8"></div>
-                                <div class="cardTitle">Nuts</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top:75px" id="n1" @click="changeClass('n1')" value="Almond">Almond</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n2" @click="changeClass('n2')" value="Pecan">Pecan</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n3" @click="changeClass('n3')" value="Walnut">Walnut</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n4" @click="changeClass('n4')" value="Sesame Seeds">Sesame Seeds</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n5" @click="changeClass('n5')" value="Peanut">Peanut</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n6" @click="changeClass('n6')" value="Pistachio">Pistachio</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n7" @click="changeClass('n7')" value="Flax">Flax</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n8" @click="changeClass('n8')" value="Cashew">Cashew</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n9" @click="changeClass('n9')" value="Chia">Chia</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n10" @click="changeClass('n10')" value="Pumkin Seeds">Pumpkin Seeds</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="n11" @click="changeClass('n11')" value="Hazelnut">Hazelnut</button>
-                            </b-card>
-                        </b-row>
-                        <b-row>
-                            
-                            <b-card class="ingredientBox2_2">
-                                <div class="circlePicture6"></div>
-                                <div class="cardTitle">Herbs & Spices</div>
-                                <div class="line2"></div>
-                                <button class="unselectedTag" style="margin-top: 75px" id="s1" @click="changeClass('s1')">Cinnamon</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s2" @click="changeClass('s2')">Cumin</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s3" @click="changeClass('s3')">Basil</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="s5" @click="changeClass('s5')">Parsley</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s6" @click="changeClass('s6')">Oregano</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s7" @click="changeClass('s7')">Coriander</button>
-                                <button class="unselectedTag" style="margin-left: 10px;" id="s8" @click="changeClass('s8')">Cayenne</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s4" @click="changeClass('s4')">Mint</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s9" @click="changeClass('s9')">Thyme</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s10" @click="changeClass('s10')">Rosemary</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s11" @click="changeClass('s11')">Chive</button>
-                                <button class="unselectedTag" style="margin-left: 10px" id="s12" @click="changeClass('s12')">Dill</button>
-                            </b-card>
-                        </b-row>
-                    </div>
-                </div>
-            </div>
-    </div>
-
-
-
-
-
-    <div class="row flex-xl-nowrap2 d-none d-lg-block">
+    <div class="row flex-xl-nowrap2">
         <column :sm="6" :md="6">
                 <div class="sidebar">
                     <button class="myFav" @click="$router.push('/favorite')">
@@ -239,6 +12,7 @@
                     <a :class="{active: active===3}" @click="scrollTo(3)">Oils / Herb & Spices</a>
                     <a :class="{active: active===4}" @click="scrollTo(4)">Cheese / Nuts</a>
                 </div>
+
         </column>
         <column :md="6">
             <div class="content_filter offset-md-2">
@@ -266,7 +40,7 @@
                                 <button class="unselectedTag" style="margin-left: 10px" id="v3" @click="changeClass('v3')" value="Chili">Chili</button>
                                 <button class="unselectedTag" style="margin-left: 10px" id="v4" @click="changeClass('v4')" value="Broccoli">Broccoli</button>
                                 <br />
-                                <button class="unselectedTag" style="margin-top: 15px" id="v5" @click="changeClass('v5')" value="Onion">Onion</button>
+                                <button class="unselectedTag" style="margin-top: 15px;" id="v5" @click="changeClass('v5')" value="Onion">Onion</button>
                                 <button class="unselectedTag" style="margin-left: 10px" id="v6" @click="changeClass('v6')" value="Eggplant">Eggplant</button>
                                 <button class="unselectedTag" style="margin-left: 10px" id="v7" @click="changeClass('v7')" value="Asparagus">Asparagus</button>
                                 <button class="unselectedTag" style="margin-left: 10px;" id="v8" @click="changeClass('v8')" value="Corn">Corn</button>
@@ -599,34 +373,11 @@ export default {
     outline: none;
     border: 2px solid rgb(185, 179, 172);
 }
-.searchBar2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 60%;
-    height: 35px;
-    border-radius: 8px;
-    border: 2px solid rgb(226, 224, 221);
-    padding: 5px;
-    font-family: system-ui;
-    color: rgb(97, 96, 96);
-}
-.searchBar2:focus {
-    outline: none;
-    border: 2px solid rgb(185, 179, 172);
-}
 .topBar_filter {
     background-color: #adc965;
     margin-top: 2vh;
     border-radius: 10px;
     height: 25vh;
-    padding: 0;
-    width: 100%;
-}
-.topBar_filter2 {
-    background-color: #adc965;
-    margin-top: 2vh;
-    border-radius: 10px;
-    height: auto;
     padding: 0;
     width: 100%;
 }
@@ -650,40 +401,12 @@ export default {
     box-shadow: 0 3px 6px 0 rgba(117, 117, 117, 0.2),
         0 3px 6px 0 rgba(71, 71, 71, 0.19);
 }
-.searchButton2 {
-    width: 45px;
-    margin-left: 10px;
-    border-radius: 8px;
-    background-color: #ffaa01;
-    border: #ffaa01;
-    color: white;
-    height: 35px;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: system-ui;
-    box-shadow: 0 2px 4px 0 rgba(145, 144, 144, 0.2);
-    cursor: pointer;
-}
-.searchButton2:hover {
-    background-color: white;
-    color: #ffaa01;
-    box-shadow: 0 3px 6px 0 rgba(117, 117, 117, 0.2),
-        0 3px 6px 0 rgba(71, 71, 71, 0.19);
-}
 .topText {
     font-size: 25px;
     color: rgb(255, 255, 255);
     font-weight: 600;
     font-family: system-ui;
     text-shadow: gray;
-}
-.topText2 {
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    font-family: system-ui;
-    text-shadow: gray;
-    text-align: center;
 }
 .blocks {
     background-color: white;
@@ -708,16 +431,6 @@ export default {
     overflow: hidden;
     box-shadow: 1px 2px 2px 1px rgba(70, 70, 70, 0.2);
 }
-.ingredientBox1_2 {
-    margin-top: 15px;
-    height: auto;
-    width: 95%;
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 1px 2px 2px 1px rgba(70, 70, 70, 0.2);
-}
 .ingredientBox2 {
     margin-top: 15px;
     margin-left: 2%;
@@ -729,30 +442,11 @@ export default {
     overflow: hidden;
     box-shadow: 1px 2px 2px 1px rgba(70, 70, 70, 0.2);
 }
-.ingredientBox2_2 {
-    margin-top: 15px;
-    height: auto;
-    width: 95%;
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 1px 2px 2px 1px rgba(70, 70, 70, 0.2);
-}
 .selectedBox {
     margin-top: 15px;
     margin-left: 4%;
     width: 20%;
     height: 45vh;
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    box-shadow: 1px 2px 2px 1px rgba(70, 70, 70, 0.2);
-}
-.selectedBox2 {
-    margin-top: 15px;
-    width: 95%;
-    height: auto;
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -928,12 +622,6 @@ export default {
     position: absolute;
     top: 18%;
 }
-.line2 {
-    width: 100%;
-    border-bottom: 2px solid #adc965;
-    position: absolute;
-    top: 40px;
-}
 .selectedLine {
     width: 100%;
     border-bottom: 2px solid #d3d1d1;
@@ -941,14 +629,6 @@ export default {
     top: 15%;
     left: 5%;
     width: 90%;
-}
-.selectedLine2 {
-    width: 100%;
-    border-bottom: 2px solid #d3d1d1;
-    position: absolute;
-    top: 40px;
-    left: 5%;
-    width: 95%;
 }
 .preference {
     margin-left: -5px;
@@ -1005,7 +685,7 @@ export default {
 }
 .myFav {
     margin-top: 17vh;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     height: 6vh;
@@ -1019,24 +699,6 @@ export default {
     background-color: #ffaa01;
     color: white;
     font-size: 22px;
-    cursor: pointer;
-}
-.myFav2 {
-    margin-top: 2px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    height: 24px;
-    float: left;
-    cursor: pointer;
-    border: 0px;
-    background-color: #ADC965;
-    border-radius: 5px;
-}
-.myFav2:hover {
-    background-color: #ffaa01;
-    color: white;
-    font-size: 16px;
     cursor: pointer;
 }
 </style>

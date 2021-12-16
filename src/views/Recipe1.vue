@@ -287,6 +287,7 @@ export default {
 .navs {
     border-top: 20px solid #adc965;
     position: fixed;
+    margin-top:10px;
     left: 0%;
     width: 200px;
     border-radius: 10px;

@@ -6,9 +6,8 @@
         <button class="return2" @click="$router.go(-1)">
             <b-icon icon="arrow-left" scale="2.5"></b-icon>
         </button>
-        <div class="titleText2">
-            <b-icon icon="bookmark-heart-fill"></b-icon>
-            <span> My Favorites</span>
+        <div>
+            <div class="titleText2">My Favorites</div>
         </div>
         <br />
     </div>
@@ -96,13 +95,11 @@ export default {
                 this.$router.push('/recipe2');
             }, 500);
         },
-
     },
 };
 </script>
 
 <style>
-
 .container-fluid1 {
     width: 100%;
     padding-right: 15px;
@@ -111,7 +108,6 @@ export default {
     margin-left: auto;
     height: 100%;
 }
-
 .topBar2 {
     background-color: #adc965;
     margin-top: 2vh;
@@ -120,22 +116,23 @@ export default {
     padding: 0;
     width: 100%;
 }
-
 .titleText2 {
-    position: relative;
-    margin-left:3%;
-    color: white;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
     font-weight: 600;
-    font-size: 20px;
     font-family: system-ui;
-    text-align: bottom;
+    text-shadow: gray;
 }
-
-
+.topIcon2 {
+    position: fixed;
+    top: 9vh;
+    left: 8%;
+    color: white;
+}
 .return2 {
     position: absolute;
     top: 2vh;
-    left: 15px;
+    left: 25px;
     height: 8vh;
     width: 5%;
     color: white;
@@ -143,41 +140,33 @@ export default {
     background-color: #adc965;
     border-radius: 5px;
 }
-
 .returnButton2:hover {
     background-color: #e4dadae5;
     color: white;
 }
-
-
 .box2 {
     padding-bottom: 50px;
 }
-
 .boxContent2 {
     display: flex;
 }
-
 .right2 {
     display: flex;
     flex-direction: column;
     flex: 4;
 }
-
 .upperRight2 {
     display: flex;
     flex-direction: row;
     flex: 4;
     margin-top: 10px;
 }
-
 .bottomRight2 {
     display: flex;
     flex-direction: row;
     flex: 4;
     margin-top: 10px;
 }
-
 .ubox2:nth-child(1) {
     width: 50%;
     border-radius: 5px;
@@ -187,7 +176,6 @@ export default {
     background-size: cover;
     background-position: center;
 }
-
 .ubox2:nth-child(2) {
     width: 50%;
     margin-left: 15px;
@@ -198,7 +186,6 @@ export default {
     background-size: cover;
     background-position: center;
 }
-
 .dbox2:nth-child(1) {
     width: 50%;
     border-radius: 5px;
@@ -208,7 +195,6 @@ export default {
     background-size: cover;
     background-position: center;
 }
-
 .dbox2:nth-child(2) {
     width: 50%;
     margin-left: 15px;
@@ -219,31 +205,26 @@ export default {
     background-size: cover;
     background-position: center;
 }
-
 div.ubox2:hover {
     box-shadow: 2px 3px 3px 2px rgba(70, 70, 70, 0.2);
     cursor: pointer;
     transform: scaleX(1.009);
     transition: 0.1s;
 }
-
 div.dbox2:hover {
     box-shadow: 2px 3px 3px 2px rgba(70, 70, 70, 0.2);
     cursor: pointer;
     transform: scaleX(1.009);
     transition: 0.1s;
 }
-
 .favoriteIcon2 {
     font-size: 30px;
     font-weight: 600;
-    position: relative;
-    margin-top: 2%;
-    margin-left: 93%;
+    margin-top: 5px;
+    margin-left: 5px;
     float: left;
     color: #adc965;
 }
-
 .recipeTitle2 {
     font-size: 20px;
     font-weight: 600;
@@ -255,7 +236,6 @@ div.dbox2:hover {
     text-shadow: 1px 1px #a0a0a0;
     bottom: 0;
 }
-
 .bottomText2 {
     font-size: 15px;
     color: white;
@@ -267,5 +247,4 @@ div.dbox2:hover {
     text-align: right;
     text-shadow: 1px 1px #a0a0a0;
 }
-
 </style>

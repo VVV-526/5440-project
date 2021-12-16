@@ -6,9 +6,9 @@
         <button class="return2" @click="$router.go(-1)">
             <b-icon icon="arrow-left" scale="2.5"></b-icon>
         </button>
-        <div>
-            <b-icon icon="bookmark-heart-fill" class="topIcon2"></b-icon>
-            <span class="titleText2">My Favorites</span>
+        <div class="titleText2">
+            <b-icon icon="bookmark-heart-fill"></b-icon>
+            <span> My Favorites</span>
         </div>
         <br />
     </div>
@@ -122,9 +122,8 @@ export default {
 }
 
 .titleText2 {
-    position: fixed;
-    top: 8vh;
-    left: 8%;
+    position: relative;
+    margin-left:3%;
     color: white;
     font-weight: 600;
     font-size: 20px;
@@ -132,12 +131,6 @@ export default {
     text-align: bottom;
 }
 
-.topIcon2 {
-    position: fixed;
-    top: 9vh;
-    left: 8%;
-    color: white;
-}
 
 .return2 {
     position: absolute;

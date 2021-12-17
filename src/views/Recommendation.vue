@@ -35,7 +35,7 @@
             </b-row>
         </div>
         <div class="boxContent">
-            <div class="left2" id="left" @click="loadAndJump()">
+            <div class="left2" id="left2" @click="loadAndJump()">
                 <div>
                     <b-row class="percentageText1_2">
                         <span style="font-weight: 600; font-size: 40px"> 100% </span>
@@ -178,14 +178,14 @@
     <div class="boxContent  d-none d-lg-block">
         <div class="left" id="left" @click="loadAndJump()">
             <div>
-                <div class="circlePercentagen">
-                    <div class="percentageTextn">
+                <div class="circlePercentage1">
+                    <div class="percentageText1">
                         <span style="font-weight: 600; font-size: 40px"> 100% </span>
                         <span style="font-size: 15px"> ingredients used </span>
                     </div>
                 </div>
-                <span class="recipeTitlen">{{this.recipeList['recipe1']['name']}}</span>
-                <div class="bottomTextn">
+                <span class="recipeTitle1">{{this.recipeList['recipe1']['name']}}</span>
+                <div class="bottomText1">
                     <span> {{this.recipeList['recipe1']['difficulty']}} </span>
                     <br />
                     <span> {{this.recipeList['recipe1']['cost']}} </span>
@@ -195,8 +195,8 @@
                     <span> {{this.recipeList['recipe1']['people']}} </span>
                 </div>
             </div>
-
         </div>
+
         <div class="right">
             <div class="upperRight">
                 <div class="ubox" id="ubox" @click="loadAndJump2()">
@@ -646,7 +646,7 @@ div.dbox:hover {
     font-weight: 600;
     color: white;
     position: relative;
-    margin-top: 37%;
+    margin-top: 18%;
     margin-left: 2%;
     float: left;
     text-shadow: 1px 1px #a0a0a0;
@@ -679,7 +679,7 @@ div.dbox:hover {
     font-size: 22px;
     color: white;
     position: relative;
-    margin-top: 27%;
+    margin-top: 14%;
     float: right;
     margin-right: 3%;
     text-align: right;
